@@ -26,3 +26,5 @@ export enum GeminiModel {
 }
 
 export type Resolution = '1K' | '2K' | '4K';
+
+export type AnalysisViewMode = 'none' | 'intensity' | 'differential';
