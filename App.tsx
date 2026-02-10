@@ -266,19 +266,15 @@ export default function App() {
             {/* REBUILT Modal Body */}
             <div className="flex-1 flex relative min-h-0 bg-black/40">
               {/* Main content area */}
-              <div className="flex-1 relative">
+              <div className="flex-1 relative min-w-0">
                   {/* Stable Centering Container */}
-                  <div className="absolute inset-0 grid place-items-center p-8 md:p-16">
+                  <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8">
                       {currentPreview.editedUrl ? (
                           <div className="w-full h-full relative">
                               {analysisMode === 'none' && (
                                   <ComparisonSlider 
                                       originalUrl={currentPreview.originalUrl} 
                                       editedUrl={currentPreview.editedUrl}
-                                      originalWidth={currentPreview.originalMetadata.width}
-                                      originalHeight={currentPreview.originalMetadata.height}
-                                      editedWidth={currentPreview.editedMetadata!.width}
-                                      editedHeight={currentPreview.editedMetadata!.height}
                                   />
                               )}
                               {analysisMode !== 'none' && (
@@ -292,10 +288,10 @@ export default function App() {
                               )}
                           </div>
                       ) : (
-                          <div className="relative max-w-full max-h-full">
+                          <div className="relative flex items-center justify-center max-w-full max-h-full">
                               <img 
                                 src={currentPreview.originalUrl} 
-                                className="block max-w-full max-h-full rounded-2xl shadow-2xl"
+                                className="block max-w-full max-h-full object-contain rounded-2xl shadow-2xl"
                                 alt="Original preview"
                               />
                               {currentPreview.status === 'processing' && (

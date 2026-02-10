@@ -137,7 +137,7 @@ const DiffOverlay: React.FC<DiffOverlayProps> = ({ originalUrl, editedUrl, origi
 
   return (
     <div className="absolute inset-0 z-40 pointer-events-none bg-black/20 backdrop-blur-[2px] animate-in fade-in duration-300">
-      <div className="relative w-full h-full flex items-center justify-center p-8">
+      <div className="relative w-full h-full flex items-center justify-center">
         <canvas 
           ref={canvasRef} 
           className="max-w-full max-h-full object-contain shadow-2xl rounded-lg border border-white/10"
